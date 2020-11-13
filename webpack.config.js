@@ -1,3 +1,4 @@
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 const path = require('path');
 
 // config contains general configuration for all build modes
@@ -21,8 +22,16 @@ var config = {
                     }
                 },
             },
+            {
+                test: /\.html?$/,
+                exclude: /node_modules/,
+                use: "html-loader",
+            }
         ],
     },
+    plugins: [new HtmlWebpackPlugin({
+        template: "/src/index.html",
+    })]
 }
 
 // by returning a function, configuration can be modified based on the build
