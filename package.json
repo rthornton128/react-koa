@@ -1,0 +1,23 @@
+{
+  "name": "react-koa",
+  "version": "1.0.0",
+  "description": "React app served by Koa",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rthornton128/react-koa.git"
+  },
+  "keywords": [
+    "react",
+    "koa"
+  ],
+  "author": "Rob Thornton",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/rthornton128/react-koa/issues"
+  },
+  "homepage": "https://github.com/rthornton128/react-koa#readme"
+}
