@@ -42,9 +42,12 @@ var config = {
                     {
                         loader: "postcss-loader",
                         options: {
-                            plugins: () => {
-                                return [ require('autoprefixer') ];
-                            }
+                            postcssOptions: {
+                                plugins: [
+                                    'autoprefixer',
+
+                                ],
+                            },
                         },
                     },
                     {
