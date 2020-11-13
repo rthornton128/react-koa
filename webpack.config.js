@@ -13,6 +13,11 @@ var config = {
                 use: ["style-loader", "css-loader"],
             },
             {
+                test: /\.html?$/,
+                exclude: /node_modules/,
+                use: "html-loader",
+            },
+            {
                 test: /\.jsx?$/,
                 exclude: /node_modules/,
                 use: {
@@ -26,10 +31,27 @@ var config = {
                 },
             },
             {
-                test: /\.html?$/,
-                exclude: /node_modules/,
-                use: "html-loader",
-            }
+                test: /\.s(a|c)ss$/,
+                use: [
+                    {
+                        loader: "style-loader",
+                    },
+                    {
+                        loader: "css-loader",
+                    },
+                    {
+                        loader: "postcss-loader",
+                        options: {
+                            plugins: () => {
+                                return [ require('autoprefixer') ];
+                            }
+                        },
+                    },
+                    {
+                        loader: "sass-loader",
+                    },
+                ],
+            },
         ],
     },
     plugins: [new HtmlWebpackPlugin({
