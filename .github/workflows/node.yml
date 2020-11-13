@@ -1,0 +1,13 @@
+name: Node CI
+
+on: [push, pull_request]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: yarn install, build
+      run: |
+        yarn install
+        yarn build
