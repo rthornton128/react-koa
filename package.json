@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build": "webpack --mode production",
+    "start": "webpack --mode development && node ./src/server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -23,7 +24,8 @@
   "homepage": "https://github.com/rthornton128/react-koa#readme",
   "dependencies": {
     "koa": "^2.13.0",
-    "koa-middlewares": "^6.0.0",
+    "koa-compress": "^5.0.1",
+    "koa-static": "^5.0.0",
     "react": "^17.0.1",
     "react-dom": "^17.0.1"
   },
