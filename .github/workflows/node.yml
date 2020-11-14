@@ -3,13 +3,14 @@ name: Node CI
 on: push
 
 jobs:
-  build:
+  build-test:
+    name: Build and Test
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
-    - name: yarn install, build
-      run: |
-        yarn install
-        yarn build
-    - name: Tests
+    - name: Yarn install
+      run: yarn install
+    - name: Build source
+      run: yarn build
+    - name: Run tests
       run: yarn test
