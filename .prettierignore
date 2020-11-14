@@ -1,0 +1,7 @@
+# directories
+.github/
+dist/
+node_modules/
+
+# files
+*.html
