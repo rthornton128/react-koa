@@ -1,4 +1,5 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const path = require('path');
 
 // config contains general configuration for all build modes
@@ -7,11 +8,6 @@ var config = {
     entry: './src/index.js',
     module: {
         rules: [
-            {
-                test: /\.css$/,
-                exclude: /node_modules/,
-                use: ["style-loader", "css-loader"],
-            },
             {
                 test: /\.html?$/,
                 exclude: /node_modules/,
@@ -31,10 +27,10 @@ var config = {
                 },
             },
             {
-                test: /\.s(a|c)ss$/,
+                test: /\.scss$/,
                 use: [
                     {
-                        loader: "style-loader",
+                        loader: MiniCssExtractPlugin.loader,
                     },
                     {
                         loader: "css-loader",
@@ -57,9 +53,23 @@ var config = {
             },
         ],
     },
-    plugins: [new HtmlWebpackPlugin({
-        template: "/src/index.html",
-    })]
+    optimization: {
+        splitChunks: {
+            chunks: 'all',
+        },
+    },
+    performance: {
+        maxEntrypointSize: 512000,
+        maxAssetSize: 384000,
+    },
+    plugins: [
+        new HtmlWebpackPlugin({
+            template: "/src/index.html",
+        }),
+        new MiniCssExtractPlugin({
+            filename: "[name].css"
+        }),
+    ]
 }
 
 // by returning a function, configuration can be modified based on the build

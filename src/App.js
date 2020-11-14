@@ -1,4 +1,5 @@
 import './App.scss'
+import 'bootstrap'
 
 export function App() {
     return <div id="app">
