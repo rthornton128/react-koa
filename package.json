@@ -24,12 +24,11 @@
   "homepage": "https://github.com/rthornton128/react-koa#readme",
   "dependencies": {
     "bootstrap": "^4.5.3",
-    "jquery": "^3.5.1",
     "koa": "^2.13.0",
     "koa-compress": "^5.0.1",
     "koa-static": "^5.0.0",
-    "popper.js": "^1.16.1",
     "react": "^17.0.1",
+    "react-bootstrap": "^1.4.0",
     "react-dom": "^17.0.1"
   },
   "devDependencies": {
