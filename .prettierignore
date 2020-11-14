@@ -1,4 +1,5 @@
 # directories
+.github/
 dist/
 node_modules/
 
