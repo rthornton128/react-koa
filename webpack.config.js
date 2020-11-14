@@ -7,7 +7,19 @@ var config = {
   context: path.resolve(__dirname),
   entry: "./src/index.js",
   module: {
-    rules: [
+    rules: [{
+        test: /\.css$/,
+        use: [MiniCssExtractPlugin.loader, "css-loader",
+          {
+            loader: "postcss-loader",
+            options: {
+              postcssOptions: {
+                plugins: ["autoprefixer"],
+              },
+            },
+          },
+        ],
+      },
       {
         test: /\.html?$/,
         exclude: /node_modules/,
@@ -33,12 +45,14 @@ var config = {
       },
       {
         test: /\.scss$/,
-        use: [
-          {
+        use: [{
             loader: MiniCssExtractPlugin.loader,
           },
           {
             loader: "css-loader",
+            options: {
+              modules: true,
+            }
           },
           {
             loader: "postcss-loader",
@@ -72,6 +86,9 @@ var config = {
       filename: "[name].css",
     }),
   ],
+  resolve: {
+    extensions: [".js", ".jsx"]
+  }
 };
 
 // by returning a function, configuration can be modified based on the build
