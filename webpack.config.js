@@ -1,3 +1,6 @@
+const {
+  CleanWebpackPlugin
+} = require("clean-webpack-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const path = require("path");
@@ -6,6 +9,9 @@ const path = require("path");
 var config = {
   context: path.resolve(__dirname),
   entry: "./src/index.js",
+  output: {
+    path: path.resolve(__dirname, 'dist'),
+  },
   module: {
     rules: [{
         test: /\.css$/,
@@ -79,6 +85,7 @@ var config = {
     maxAssetSize: 384000,
   },
   plugins: [
+    new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
       template: "/src/index.html",
     }),
