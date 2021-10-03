@@ -24,7 +24,7 @@
   "homepage": "https://github.com/rthornton128/react-koa#readme",
   "dependencies": {
     "bootstrap": "^4.6.0",
-    "koa": "^2.13.1",
+    "koa": "^2.13.3",
     "koa-compress": "^5.1.0",
     "koa-static": "^5.0.0",
     "react": "^17.0.2",
@@ -54,7 +54,7 @@
     "sass": "^1.41.1",
     "sass-loader": "^12.1.0",
     "style-loader": "^3.2.1",
-    "webpack": "^5.53.0",
+    "webpack": "^5.56.0",
     "webpack-cli": "^4.8.0"
   },
   "jest": {
