@@ -24,7 +24,7 @@
   "homepage": "https://github.com/rthornton128/react-koa#readme",
   "dependencies": {
     "bootstrap": "^4.6.0",
-    "koa": "^2.13.1",
+    "koa": "^2.13.3",
     "koa-compress": "^5.1.0",
     "koa-static": "^5.0.0",
     "react": "^17.0.2",
@@ -37,7 +37,7 @@
     "@babel/preset-react": "^7.14.5",
     "@testing-library/react": "^12.1.0",
     "autoprefixer": "^10.3.4",
-    "babel-jest": "^27.2.1",
+    "babel-jest": "^27.2.4",
     "babel-loader": "^8.2.2",
     "clean-webpack-plugin": "^4.0.0",
     "css-loader": "^6.3.0",
